@@ -38,7 +38,7 @@ module.exports.loginUser=async function(req,res) {
 
    let user= await userModel.findOne({email:email});
 
-   if(!user) return res.send("Email or password incorrect");
+   if(!user) return res.send("you don't have an account, please register");
 
    bcrypt.compare(password, user.password, function(err,result){
     if(result){
